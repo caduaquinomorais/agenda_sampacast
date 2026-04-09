@@ -4,6 +4,8 @@ from datetime import date, datetime
 from urllib.parse import quote
 import webbrowser
 import logging
+import os
+
 
 COL_NOME     = "Usuário - Nome"
 COL_TELEFONE = "Usuário - Telefone"
@@ -24,7 +26,6 @@ def generate_link(phone_number, message, ddi="55"):
     
     return f"https://wa.me/{final_number}/?text={encoded_message}"
 
-#Log simples
 logging.basicConfig(level=logging.INFO)
 
 def messages_browser(phone_number, message):
@@ -68,6 +69,29 @@ def send_messages_from_excel(file_path):
     except Exception as e:
         print(f"Ocorreu um erro ao processar o arquivo Excel: {e}")
 
+
+def main_menu():
+    while True:
+        print('\n*** Menu de mensageria e limpeza de relatórios ***\n')
+        print('1 - Para enviar mensagens via whatsapp')
+        print('2 - Para enviar mensagens via email')
+        print('3 - Limpeza de relatórios')
+        print('4 - Sair')
+
+        opcao = input('Qual a opção desejada? ')
+
+        match opcao:
+            case '1':
+                send_messages_from_excel(file_path)
+            case '2':
+                print('Teste email')
+            case '3':
+                print('Teste limpeza')
+            case '4':
+                break
+
+        
+
 if __name__ == "__main__":
     file_path = r'agenda.xlsx'
-    send_messages_from_excel(file_path)
+    main_menu()
