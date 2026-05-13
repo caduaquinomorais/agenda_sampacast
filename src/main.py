@@ -1,5 +1,7 @@
 from config import config
+from envio_email import Parametros_email
 from mensagens import *
+
 
 def main_menu():
     while True:
@@ -16,6 +18,7 @@ def main_menu():
                 Parametros_Mensagem.retirada_datos_excel(config.excel_path)
             case '2':
                 print('Teste email')
+                Parametros_email.retirada_datos_excel(config.excel_path)
             case '3':
                 print('Teste limpeza')
             case '4':

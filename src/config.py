@@ -12,6 +12,8 @@ class config:
     COL_TELEFONE = "Usuário - Telefone"
     COL_UNIDADE  = "Unidade"
     COL_HORARIO  = "Horário Início"
+    COL_EMAIL    = "Usuário - Email"
+    COL_DATA     = "Data do Agendamento"
 
     #WhatsApp
     whatsapp_delay: float = 1.5
